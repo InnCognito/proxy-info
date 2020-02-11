@@ -1,1 +1,1 @@
-# Airbnb-more-homes-proxy
+# InnCognito: proxy server for the info microservice
