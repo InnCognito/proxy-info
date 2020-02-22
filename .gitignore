@@ -8,5 +8,5 @@ node_modules
 .DS_Store
 
 newrelic_agent.log
-newrelic.json
+newrelic.js
 proxy_k6.js
