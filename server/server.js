@@ -1,5 +1,7 @@
+require('newrelic');
 const express = require('express');
 const proxy = require('http-proxy-middleware');
+const axios = require('axios');
 
 const app = express();
 
@@ -8,16 +10,14 @@ app.use(express.static(dirPath));
 
 const { routes } = require('../proxyconfig.json');
 
-for (route of routes) {
-  app.use(route.route,
-      proxy({
-          target: route.address,
-          pathRewrite: (path, req) => {
-              return path.split('/').slice(2).join('/');
-          }
-      })
-  );
-}
-
+app.get('/api/:component/:id', (req, res) => {
+  console.log(req.params.component);
+  axios.get(`${routes[req.params.component].address}/${req.params.id}`)
+  .then(data => res.send(data.data))
+  .catch(err => {
+      console.log('ERROR RETRIEVING INFORMATION', err);
+      res.send(err);
+  })
+});
 
 app.listen(3000, () => console.log('Listening on port: 3000'));
