@@ -11,7 +11,6 @@ app.use(express.static(dirPath));
 const { routes } = require('../proxyconfig.json');
 
 app.get('/api/:component/:id', (req, res) => {
-  console.log(req.params.component);
   axios.get(`${routes[req.params.component].address}/${req.params.id}`)
   .then(data => res.send(data.data))
   .catch(err => {
