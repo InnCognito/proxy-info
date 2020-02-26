@@ -6,7 +6,7 @@
     },
     "listings": {
       "route": "/listings",
-      "address": "http://54.70.245.139:3002/api/listings"
+      "address": "http://54.71.145.232:80/api/listings"
     },
     "room": {
       "route": "/room",
