@@ -18,11 +18,11 @@
     },
     "reviews": {
       "route": "/reviews",
-      "address": "http://18.218.58.47:3004/api/reviews"
+      "address": "http://52.13.113.42/api/reviews"
     },
     "moreHomes": {
       "route": "/MoreHomes",
-      "address": "http://3.14.81.50/api/morehomes"
+      "address": "http://54.185.57.115/api/morehomes"
     }
   }
 }
